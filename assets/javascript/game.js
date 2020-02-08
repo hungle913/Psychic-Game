@@ -20,3 +20,7 @@ function gameReset() {
   }
   
   gameReset();
+
+  document.onkeyup = function(event) {
+    var userGuess = event.key.toLocaleLowerCase();
+  }
