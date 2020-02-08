@@ -3,24 +3,42 @@ var wins = 0;
 var losses = 0;
 var guesses = 9;
 
-var winner = document.getElementById("wins");
-var loser = document.getElementById("losses");
-var guessesLeft = document.getElementById("guesses");
-var userGuesses = document.getElementById("userGuesses");
-
 var computerChoice = letters[Math.floor(Math.random() * letters.length)];
 console.log(computerChoice);
 
 var userChoice = [];
 
+var winner = document.getElementById("wins");
+var loser = document.getElementById("losses");
+var guessesLeft = document.getElementById("guesses");
+var userGuesses = document.getElementById("userGuesses");
+
 function gameReset() {
-    winner.textContent = wins;
-    guessesLeft.textContent = guesses;
-    loser.textContent = losses;
+    document.getElementById("wins").textContent = "Wins: " + wins;
+    document.getElementById("losses").textContent = "Losses: " + losses;
+    document.getElementById("guesses").textContent = "Guesses Left: " + guesses;
   }
   
-  gameReset();
+gameReset();
 
-  document.onkeyup = function(event) {
+document.onkeyup = function(event) {
     var userGuess = event.key.toLocaleLowerCase();
+    userChoice.push(userGuess);
+    userGuesses.textContent = userChoice;
+    
+    if (userGuess === computerChoice) {
+        wins++;
+        guesses = 9
+        userChoice = [];
+        computerChoice = letters[Math.floor(Math.random() * letters.length)];
+    } else { 
+        guesses--;
+         if (guesses === 0) {
+            losses++;
+            userChoice = [];
+            guesses = 9
+         }
+
+    }
+    gameReset()
   }
