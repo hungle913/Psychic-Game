@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function(event) { 
+    //do work
+
+
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var wins = 0;
 var losses = 0;
@@ -13,13 +17,18 @@ var loser = document.getElementById("losses");
 var guessesLeft = document.getElementById("guesses");
 var userGuesses = document.getElementById("userGuesses");
 
+
 function gameReset() {
     document.getElementById("wins").textContent = "Wins: " + wins;
     document.getElementById("losses").textContent = "Losses: " + losses;
     document.getElementById("guesses").textContent = "Guesses Left: " + guesses;
+    document.getElementById("userGuesses").textContent = "Your Guesses so far: " + userChoice
+    var computerChoice = letters[Math.floor(Math.random() * letters.length)];
+    console.log(computerChoice);
   }
   
 gameReset();
+
 
 document.onkeyup = function(event) {
     var userGuess = event.key.toLocaleLowerCase();
@@ -31,14 +40,17 @@ document.onkeyup = function(event) {
         guesses = 9
         userChoice = [];
         computerChoice = letters[Math.floor(Math.random() * letters.length)];
-    } else { 
+        console.log(computerChoice);
+        } 
+        else { 
         guesses--;
          if (guesses === 0) {
             losses++;
             userChoice = [];
             guesses = 9
-         }
-
+            }
+        }
     }
-    gameReset()
-  }
+  gameReset();
+
+});
