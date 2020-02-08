@@ -12,3 +12,11 @@ var computerChoice = letters[Math.floor(Math.random() * letters.length)];
 console.log(computerChoice);
 
 var userChoice = [];
+
+function gameReset() {
+    winner.textContent = wins;
+    guessesLeft.textContent = guesses;
+    loser.textContent = losses;
+  }
+  
+  gameReset();
