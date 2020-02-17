@@ -23,7 +23,8 @@ function gameReset() {
     document.getElementById("losses").textContent = "Losses: " + losses;
     document.getElementById("guesses").textContent = "Guesses Left: " + guesses;
     document.getElementById("userGuesses").textContent = "Your Guesses so far: " + userChoice;
-    computerChoice;
+    computerChoice = letters[Math.floor(Math.random() * letters.length)];
+    console.log(computerChoice);
   }
   
 
@@ -36,16 +37,18 @@ document.onkeyup = function(event) {
     
     if (userGuess === computerChoice) {
         wins++;
-        guesses = 9
         userChoice = [];
+        guesses = 9
         gameReset();
         } 
         else { 
         guesses--;
+        document.getElementById("guesses").textContent = "Guesses Left: " + guesses;
+        document.getElementById("userGuesses").textContent = "Your Guesses so far: " + userChoice;
          if (guesses === 0) {
             losses++;
             userChoice = [];
-            guesses--;
+            guesses = 9
             gameReset();
             }
         }
