@@ -56,10 +56,3 @@ document.onkeyup = function(event) {
 
 
 });
-
-var target = document.getElementsByTagName("userGuesses")[0];
-
-if (event.target != target) {
-    target.focus();
-    target.click();
-}
