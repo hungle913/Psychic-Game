@@ -6,7 +6,7 @@
 [Psychic-Game](https://hungle913.github.io/Psychic-Game/)
 
 ### Screenshot
-![Psychic-Game Screenshot](assets/images/Screen_Shot.PNG?raw=true "Pschic-Game")
+![Psychic-Game Screenshot](./assets/images/Screen_Shot.PNG?raw=true "Pschic-Game")
 
 
 ### Unresolved Issues
