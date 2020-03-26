@@ -16,3 +16,5 @@
 * Restrict keys to just alpha.
 
 * Work on css Styling. Page is currently very basic. 
+
+* Need solution to play game on Mobile devices. Virtual keyboard does not come up on document load for input.
